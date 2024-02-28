@@ -1,19 +1,19 @@
-import React, { useState  } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import CityWeather from './CityWeather';
 import AddCityForm from './AddCityForm';
+import { addCity } from './redux/actions/cityActions';
 
 function App() {
-  const [cities, setCities] = useState([
-    { id: 1, cityName: 'New York' },
-    { id: 2, cityName: 'London' },
-  ]);
+  const cities = useSelector((state) => state.city.cities);
+  const dispatch = useDispatch();
 
-  const addCity = (cityName) => {
+  const handleAddCity = (cityName) => {
     const newCity = {
       id: cities.length + 1,
       cityName,
     };
-    setCities([...cities, newCity]);
+    dispatch(addCity(newCity))
   };
 
     return (
@@ -24,7 +24,7 @@ function App() {
           ))}
         </div>
    
-          <AddCityForm onAddCity={addCity} />
+          <AddCityForm onAddCity={handleAddCity } />
       </div>
     );
   }

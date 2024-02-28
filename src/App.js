@@ -10,25 +10,27 @@ function App() {
 
   const handleAddCity = (cityName) => {
     const newCity = {
-      id: cities.length + 1,
+      id: Date.now(), 
       cityName,
+      currentTemp: 'N/A', 
+      weatherIcon: 'default-icon' 
     };
-    dispatch(addCity(newCity))
+    dispatch(addCity(newCity)); 
   };
 
-    return (
-      <div className="container">
-         <AddCityForm onAddCity={handleAddCity } />
-        <div className="row">
-          {cities.map(city => (
-            <CityWeather key={city.id} cityName={city.cityName} />
-          ))}
-        </div>
-   
-         
+  return (
+    <div className="container">
+      <div className="d-flex justify-content-between align-items-center mb-5">
+        <h2>MyWeather</h2>
+        <AddCityForm onAddCity={handleAddCity} />
       </div>
-    );
-  }
-
+      <div className="row">
+        {cities.map(city => (
+          <CityWeather key={city.id} cityName={city.cityName} currentTemp={city.currentTemp} weatherIcon={city.weatherIcon} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default App;

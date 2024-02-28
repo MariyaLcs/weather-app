@@ -7,10 +7,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eef;
-  background-image: url('/public/abstract-background.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(0deg, rgba(148, 141, 141, 0.925), rgba(222, 213, 213, 0.239)), url('/public/abstract-background.png') no-repeat center center;
   background-size: cover; 
   min-height: 100vh; 
+  text-shadow: 2px 2px 4px #000000; 
 }
 
+.city-weather{
+  background-color: #727F8D;
+  background-size: cover;
+  margin: 2px;
+}
+
+.add-city{
+  background: #B1C9D1;
+}

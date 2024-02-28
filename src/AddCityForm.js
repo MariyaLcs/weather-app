@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus} from '@fortawesome/free-solid-svg-icons';
 
 function AddCityForm({ onAddCity }) {
   const [cityName, setCityName] = useState('');
@@ -13,8 +13,8 @@ function AddCityForm({ onAddCity }) {
 
   return (
     <div className="d-flex justify-content-end mb-4">
-      <div className="card" style={{ width: '300px' }}>
-        <div className="card-body">
+      <div className="card mb-3" style={{ width: '300px' }}>
+        <div className="card-body add-city">
           <form onSubmit={handleSubmit} className="row g-3 align-items-center">
             <div className="col-auto">
               <input
@@ -27,7 +27,7 @@ function AddCityForm({ onAddCity }) {
               />
             </div>
             <div className="col-auto">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-outline-primary">
                 <FontAwesomeIcon icon={faPlus} />
               </button>
             </div>

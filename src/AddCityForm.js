@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function AddCityForm({ onAddCity }) {
   const [cityName, setCityName] = useState('');
@@ -6,28 +8,36 @@ function AddCityForm({ onAddCity }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddCity(cityName);
-    setCityName(''); 
+    setCityName('');
   };
 
   return (
-    <div className="mb-4"> 
-      <form onSubmit={handleSubmit} className="row g-3"> 
-        <div className="col-auto">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter city name"
-            value={cityName}
-            onChange={(e) => setCityName(e.target.value)}
-            required
-          />
+    <div className="d-flex justify-content-end mb-4">
+      <div className="card" style={{ width: '300px' }}>
+        <div className="card-body">
+          <form onSubmit={handleSubmit} className="row g-3 align-items-center">
+            <div className="col-auto">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter city name"
+                value={cityName}
+                onChange={(e) => setCityName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="col-auto">
+              <button type="submit" className="btn btn-success">
+                <FontAwesomeIcon icon={faPlus} />
+              </button>
+            </div>
+           
+          </form>
         </div>
-        <div className="col-auto">
-          <button type="submit" className="btn btn-success mb-3">Add City</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
 
 export default AddCityForm;
+

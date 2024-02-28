@@ -18,13 +18,14 @@ function App() {
 
     return (
       <div className="container">
+         <AddCityForm onAddCity={handleAddCity } />
         <div className="row">
           {cities.map(city => (
             <CityWeather key={city.id} cityName={city.cityName} />
           ))}
         </div>
    
-          <AddCityForm onAddCity={handleAddCity } />
+         
       </div>
     );
   }

@@ -1,6 +1,7 @@
-import { addCity } from './actions/cityActions';
+import { addCity } from './actions/cityActions.ts';
+import { AppDispatch } from './store.ts';
 
-export const fetchWeatherForCity = (cityName) => async (dispatch) => {
+export const fetchWeatherForCity = (cityName:string) => async (dispatch: AppDispatch) => {
   const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY; // Ensure you have your API key in .env
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 

@@ -14,7 +14,7 @@ export const addCity = ({ id, cityName, currentTemp = 'N/A', weatherIcon = 'defa
 
 export const REMOVE_CITY = 'REMOVE_CITY';
 
-export const removeCity = id => ({
+export const removeCity = (id:string) => ({
   type: REMOVE_CITY,
   payload: id,
 });

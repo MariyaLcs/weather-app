@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import citiesReducer from './citiesReducer';
+import citiesReducer from './citiesReducer.ts';
 
 const rootReducer = combineReducers({
   cities: citiesReducer

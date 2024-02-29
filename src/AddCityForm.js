@@ -12,7 +12,7 @@ function AddCityForm({ onAddCity }) {
   };
 
   return (
-    <div className="d-flex justify-content-end">
+    <div className="d-flex justify-content-end ">
       <div className="card mb-3" style={{ width: '300px' }}>
         <div className="card-body add-city">
           <form onSubmit={handleSubmit} className="row g-3 align-items-center">

@@ -10,7 +10,7 @@ body {
   background: linear-gradient(0deg, rgba(148, 141, 141, 0.925), rgba(222, 213, 213, 0.239)), url('/public/abstract-background.png') no-repeat center center;
   background-size: cover; 
   min-height: 100vh; 
-  text-shadow: 2px 2px 4px #000000; 
+  text-shadow: 1px 1px 2px #000000; 
 }
 
 .city-weather{

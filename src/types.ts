@@ -8,6 +8,7 @@ export interface City {
 export type State = City[];
 
 export interface CitiesState {
+  map (arg0: (city: any) => any): unknown;
   cities: City[];
 }
 

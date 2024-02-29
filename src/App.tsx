@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import CityWeather from './CityWeather.tsx';
-import AddCityForm from './AddCityForm.tsx';
+import CityDetail from './CityDetail.tsx'; // Import CityDetail component
+import Header from './Header.tsx';
 import { fetchWeatherForCity } from './redux/thunks.ts';
 import { RootState } from './types.ts';
 import { AppDispatch } from './redux/store.ts';
 
-const defaultCities = ['New York', 'London', 'Tokyo', 'Sydney', 'Delhi', 'Beijing', 'Moscow', 'Jakarta', 'Cairo'];
+const defaultCities = ['New York', 'London', 'Delhi', 'Beijing', 'Moscow', 'Jakarta', 'Cairo'];
 
 function App ()
 {
-
-  const cities = useSelector((state: RootState) =>
-  {
-    return state.city;
-  });
+  const cities = useSelector((state: RootState) => state.city);
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() =>
@@ -31,17 +29,27 @@ function App ()
   };
 
   return (
-    <div className="container">
-      <div className="d-flex justify-content-between align-items-center mb-5">
-        <h2>MyWeather</h2>
-        <AddCityForm onAddCity={ handleAddCity } />
+    <Router>
+      <Header onAddCity={ handleAddCity } />
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={
+            <div className="row">
+              { cities && cities.map(city => (
+                <CityWeather
+                  key={ city.id }
+                  id={ city.id }
+                  cityName={ city.cityName }
+                  currentTemp={ city.currentTemp }
+                  weatherIcon={ city.weatherIcon }
+                />
+              )) }
+            </div>
+          } />
+          <Route path="/city/:id" element={ <CityDetail /> } />
+        </Routes>
       </div>
-      <div className="row">
-        { cities && cities.map(city => (
-          <CityWeather key={ city.id } id={ city.id } cityName={ city.cityName } currentTemp={ city.currentTemp } weatherIcon={ city.weatherIcon } />
-        )) }
-      </div>
-    </div>
+    </Router>
   );
 }
 

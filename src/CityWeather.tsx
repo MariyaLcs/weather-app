@@ -5,6 +5,7 @@ import { removeCity } from './redux/actions/cityActions.ts';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function CityWeather ({ id, cityName, currentTemp, weatherIcon })
 {
@@ -24,6 +25,7 @@ function CityWeather ({ id, cityName, currentTemp, weatherIcon })
             <button className="delete-icon btn btn-sm btn-primary" onClick={ handleRemoveCity }>
               <FontAwesomeIcon icon={ faTrashAlt } />
             </button>
+            <Link to={ `/city/${id}` } className="btn btn-primary">View Details</Link> {/* Link to detailed page */ }
           </div>
         </div>
       </div>

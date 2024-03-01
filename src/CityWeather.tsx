@@ -21,11 +21,11 @@ function CityWeather ({ id, cityName, currentTemp, weatherIcon })
           <h5 className="card-title font-bold text-white">{ cityName }</h5>
           <p className="card-text text-white">Temp: { currentTemp }</p>
           <div className="d-flex justify-content-between align-items-center">
-            <WeatherIcon weatherIcon={ weatherIcon } /></div>
+            <WeatherIcon weatherIcon={ weatherIcon } size={ 2 } /></div>
           <button className="delete-icon btn btn-sm btn-light mx-3" onClick={ handleRemoveCity }>
             <FontAwesomeIcon icon={ faTrashAlt } />
           </button>
-          <Link to={ `/city/${id}` } className="btn btn-outline-light btn-sm ">View Details</Link>
+          <Link to={ `/city/${id}` } state={ { id, cityName, currentTemp, weatherIcon } } className="btn btn-outline-light btn-sm ">View Details</Link>
 
         </div>
       </div>

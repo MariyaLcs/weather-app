@@ -1,10 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import WeatherIcon from './WeatherIcon.tsx';
 
 function CityDetail ()
 {
     const { id }: { id?: string } = useParams();
     console.log(useParams());
+
+    const location = useLocation();
+    const { cityName, currentTemp, weatherIcon } = location.state;
 
     if (!id)
     {
@@ -13,10 +17,10 @@ function CityDetail ()
 
     return (
         <div>
-            <h2>City Details</h2>
-            <p>City ID: { id }</p>
-            {/* Add more detailed information about the city here */ }
 
+            <h2 className="card-title font-bold text-white">{ cityName }</h2>
+            <p>Temperature: { currentTemp }</p>
+            <WeatherIcon weatherIcon={ weatherIcon } size={ 4 } />
 
         </div>
     );

@@ -8,7 +8,7 @@ import { fetchWeatherForCity } from './redux/thunks.ts';
 import { RootState } from './types.ts';
 import { AppDispatch } from './redux/store.ts';
 
-const defaultCities = ['New York', 'London', 'Delhi', 'Beijing', 'Moscow', 'Jakarta', 'Cairo'];
+const defaultCities = ['Manchester', 'Novosibirsk', 'Warrington', 'Prestatyn', 'Hurghada', 'Naples', 'Burgas'];
 
 function App ()
 {

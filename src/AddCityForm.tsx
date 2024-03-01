@@ -29,7 +29,7 @@ function AddCityForm ({ onAddCity })
               />
             </div>
             <div className="col-auto">
-              <button type="submit" className="btn btn-outline-primary">
+              <button type="submit" className="btn btn-outline-dark">
                 <FontAwesomeIcon icon={ faPlus } />
               </button>
             </div>

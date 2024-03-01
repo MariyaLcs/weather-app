@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 
 function CityDetail ()
 {
-    const { id }: { id?: string } = useParams(); // Specify id as optional
+    const { id }: { id?: string } = useParams();
+    console.log(useParams());
 
     if (!id)
     {
-        return <div>No city ID found!</div>; // Handle case where id is not provided
+        return <div>No city ID found!</div>;
     }
 
     return (

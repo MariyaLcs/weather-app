@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import CityWeather from './CityWeather.tsx';
-import CityDetail from './CityDetail.tsx'; // Import CityDetail component
+import CityDetail from './CityDetail.tsx';
 import Header from './Header.tsx';
 import { fetchWeatherForCity } from './redux/thunks.ts';
 import { RootState } from './types.ts';

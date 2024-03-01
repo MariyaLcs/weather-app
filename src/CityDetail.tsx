@@ -16,6 +16,8 @@ function CityDetail ()
             <h2>City Details</h2>
             <p>City ID: { id }</p>
             {/* Add more detailed information about the city here */ }
+
+
         </div>
     );
 }
